@@ -1,10 +1,9 @@
 <?php 
 use App\Http\Controllers\ProductController;
 // use Illuminate\Http\Request;
+$totalCartItem = 0;
 if(Session::has('user')){
   $totalCartItem = ProductController::cart_Count();
-}else{
-  $totalCartItem = 0;
 }
 
 ?>
