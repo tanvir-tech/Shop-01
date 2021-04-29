@@ -1,3 +1,13 @@
+<?php 
+use App\Http\Controllers\ProductController;
+// use Illuminate\Http\Request;
+if(Session::has('user')){
+  $totalCartItem = ProductController::cart_Count();
+}else{
+  $totalCartItem = 0;
+}
+
+?>
 {{-- nav bar  --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand " href="#">Tanvir's Shop</a>
@@ -20,8 +30,15 @@
       </ul>
 
 
+     
+
 {{-- cart  --}}
-      <a class="nav-link" href="#">Cart(0)</a>
+      {{-- <a class="nav-link" href="/cartlist">Cart({{$totalCartItem}})</a> --}}
+      @if(Session::has('user'))
+      <a class="nav-link" href="/cartlist">Cart({{$totalCartItem}})</a>
+      @else
+      <a class="nav-link" href="/login">Cart({{$totalCartItem}})</a>
+      @endif
 {{-- search  --}}
       <form class="form-inline my-2 my-lg-0" action="/search">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
