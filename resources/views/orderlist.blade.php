@@ -1,19 +1,10 @@
 @extends('master')
 @section("content")
 
+<h2 class="bg-success text-white text-center">Your Orders</h2>
 
-
-
-
-      
-
-    
 <div class="row">
-      <div class="col-lg-11">
-
-
-            <div class="row">
-                  @foreach ($Products as $item)
+                @foreach ($orders as $item)
               
                 <div class="col-lg-3 p-3">
                       <a href="detail/{{$item->id}}">
@@ -25,25 +16,27 @@
                       <div class="text-danger">{{$item->price}} BDT</div>
                 </div>
                 <div class="col-lg-3 p-3">
-                      <a href="removeCart/{{$item->cart_id}}" class="text-white btn btn-warning">Remove from Cart</a>
+                    <h4 class="text-info">Order Detail</h5>
+
+                    <h6>Address : {{$item->address}}</h6>
+                    <h6>Payment Status : {{$item->payment_status}}</h6>
+                    <h6>Payment Method : {{$item->payment_method}}</h6>
+                    <h6>Delivery Status : {{$item->status}}</h6>
+                    
                 </div>
-              
-              
-                  <hr style="width:100%;"><br>
-              
-                  @endforeach
-              </div>
-              
 
-      </div>
 
-      
-      <div class="col-lg-1">
-            <a href="orderNow" class="text-white btn btn-success">Order Now</a>
-      </div>
+
+
+
+
+                <hr style="width:100%;"><br>
+
+
+                @endforeach
+
 </div>
-
-
+           
 
 
 
