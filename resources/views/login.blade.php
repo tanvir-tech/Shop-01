@@ -5,11 +5,10 @@
 
     <div class="row p-2">
       <div class="col-lg-9 bg-secondary text-warning p-2">
-        <h1>Welcome to Tangail Sharee Shop</h1>
+        <h1>Welcome to Our Shop</h1>
         <br>
         <p>
-          Tangail Sharee is one of the leading cloth culture in Bangladesh. We have the vast collection of various kinds of Tangail Sharee.
-          We want to provide our customers the best quality products. 
+          In our shop you will get the latest collection of various kinds of products.
         </p>
 
 
