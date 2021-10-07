@@ -9,19 +9,18 @@
         <form action="registration" method="POST">
           @csrf
         <br>
-        <h3 class="text-center">Register as Customer</h3>
+        <h3 class="text-center">Reset your password</h3>
         <br>
     
-        <input class="form-control mr-sm-2" type="text" placeholder="Customer name" name="user">
-        <br>
         <input class="form-control mr-sm-2" type="email" placeholder="email" name="email">
         <br>
-        <input class="form-control mr-sm-2" type="text" placeholder="address" name="address">
+        <input class="form-control mr-sm-2" type="password" placeholder="New password" name="password">
         <br>
-        <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password">
+        <input class="form-control mr-sm-2" type="password" placeholder="Confirm password" name="password">
         <br>
-    
-        <button class="btn btn-success" type="submit">Submit</button>
+
+
+        <button class="btn btn-warning" type="submit">Save</button>
         <br><br>
         </form>
       </div>

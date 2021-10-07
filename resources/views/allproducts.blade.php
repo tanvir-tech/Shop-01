@@ -16,7 +16,7 @@
       <div class="card-body">
         <h5 class="card-title">{{$item['name']}}</h5>
         <p class="card-text">{{$item['description']}}</p>
-        <a href="#" class="btn btn-warning btn-sm">Buy now</a>
+        <a href="detail/{{$item['id']}}" class="btn btn-warning btn-sm">Detail</a>
       </div>
       <div class="card-footer text-danger">{{$item['price']}} BDT</div>
     </div>

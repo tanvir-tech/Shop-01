@@ -13,11 +13,11 @@ class UserController extends Controller
         $user = User::where(['email'=>$req->email])->first();
 
         if(!$user || !Hash::check($req->password,$user->password)){
-            
+            // if no user OR unmatched
             return "Username or pass not matched";
         
         }else{
-
+// matched
             $req->session()->put('user',$user);
             return redirect("home");
 

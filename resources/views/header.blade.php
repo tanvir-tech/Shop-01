@@ -9,7 +9,7 @@ if(Session::has('user')){
 ?>
 {{-- nav bar  --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand " href="#">Tanvir's Shop</a>
+    <a class="navbar-brand " href="/home">Book House</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,7 +23,7 @@ if(Session::has('user')){
           <a class="nav-link" href="#">Categories</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Guidelines</a>
+            <a class="nav-link" href="#">Trending</a>
           </li>
     
       </ul>
@@ -35,8 +35,8 @@ if(Session::has('user')){
       {{-- <a class="nav-link" href="/cartlist">Cart({{$totalCartItem}})</a> --}}
       @if(Session::has('user'))
       <a class="nav-link" href="/cartlist">Cart({{$totalCartItem}})</a>
-      @else
-      <a class="nav-link" href="/login">Cart({{$totalCartItem}})</a>
+      {{-- @else
+      <a class="nav-link" href="/login">Cart({{$totalCartItem}})</a> --}}
       @endif
 {{-- search  --}}
       <form class="form-inline my-2 my-lg-0" action="/search">

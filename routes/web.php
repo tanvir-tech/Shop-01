@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+// user 
 Route::post('/login',[UserController::class,'login']);
 
 Route::get('/logout',[UserController::class,'logout']);
@@ -31,6 +33,11 @@ Route::get('/logout',[UserController::class,'logout']);
 Route::get('/registration', function () {return view('registration');});
 Route::post('/registration',[UserController::class,'registration']);
 
+Route::get('/forgetPass', function () {return view('auth.forgetPass');});
+
+Route::get('/resetPass', function () {return view('auth.resetPass');});
+
+// product 
 Route::get('/home',[ProductController::class,'showProducts']);
 
 Route::get('/search',[ProductController::class,'search']);

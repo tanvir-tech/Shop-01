@@ -28,7 +28,7 @@
         <button class="btn btn-success" type="submit">Login</button>
         <a class="text-success btn btn-warning btn-sm" href="registration">Create account</a>
         <br><br>
-        <a class="text-primary" href="#">Forgot password !</a>
+        <a class="text-primary" href="forgetPass">Forgot password !</a>
         <br><br>
         </form>
       </div>
