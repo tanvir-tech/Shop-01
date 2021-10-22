@@ -11,17 +11,29 @@
         <br>
         <h3 class="text-center">New product</h3>
         <br>
-        <input class="form-control mr-sm-2" type="text" placeholder="Product name" name="productName">
+        <input class="form-control mr-sm-2" type="text" placeholder="Book name" name="productName">
         <br>
-        <input class="form-control mr-sm-2" type="text" placeholder="description" name="description">
+        <input class="form-control mr-sm-2" type="text" placeholder="author / description" name="description">
         <br>
-        <input class="form-control mr-sm-2" type="text" placeholder="category" name="category">
+        <label for="category">Book category:</label>
+        <select class="form-control col-lg-6" id="category" name="category">
+          <option value="Engineering">Engineering</option>
+          <option value="Fiction">Fiction</option>
+          <option value="ScienceFiction">ScienceFiction</option>
+          <option value="Arts">Arts</option>
+          <option value="Bengali">Bengali</option>
+          <option value="English">English</option>
+          <option value="Grammer">Grammer</option>
+          <option value="Vocabulary">Vocabulary</option>
+          <option value="Comics">Comics</option>
+          <option value="GeneralKnowledge">GeneralKnowledge</option>
+      </select>
         <br>
-        <input class="form-control mr-sm-2" type="number" placeholder="price" name="price">
+        <input class="form-control col-lg-4" type="number" placeholder="price" name="price">
         <br>
-        <input class="form-control mr-sm-2" type="number" placeholder="discount" name="discount">
+        <input class="form-control col-lg-4" type="number" placeholder="discount" name="discount">
         <br>
-        <input class="form-control mr-sm-2" type="number" placeholder="quantity" name="quantity">
+        <input class="form-control col-lg-4" type="number" placeholder="quantity" name="quantity">
         <br>
             {{-- product Image  --}}
             <label for="productImage">Select an image:</label>

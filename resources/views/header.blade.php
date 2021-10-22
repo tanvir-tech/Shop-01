@@ -20,7 +20,25 @@ if(Session::has('user')){
           <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Categories</a>
+          <div class="dropdown p-1">
+            <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item text-info" href="category/Engineering" target="blank">Engineering</a>
+                <a class="dropdown-item text-warning" href="category/Fiction" target="blank">Fiction</a>
+                <a class="dropdown-item text-info" href="category/ScienceFiction" target="blank">ScienceFiction</a>
+                <a class="dropdown-item text-warning" href="category/Arts" target="blank">Arts</a>
+                <a class="dropdown-item text-info" href="category/Bengali" target="blank">Bengali</a>
+                <a class="dropdown-item text-warning" href="category/English" target="blank">English</a>
+                <a class="dropdown-item text-info" href="category/Grammer" target="blank">Grammer</a>
+                <a class="dropdown-item text-warning" href="category/Vocabulary" target="blank">Vocabulary</a>
+                <a class="dropdown-item text-info" href="category/Comics" target="blank">Comics</a>
+                <a class="dropdown-item text-warning" href="category/GeneralKnowledge" target="blank">GeneralKnowledge</a>
+
+            </div>
+        </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Trending</a>
