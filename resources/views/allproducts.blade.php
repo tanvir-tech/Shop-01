@@ -1,10 +1,10 @@
 @extends('master')
 @section("content")
 
-<div class="allproducts bg-info p-5">
-    <h3 class="text-light">Allproducts here </h3>
+<div class="allproducts bg-secondary p-2">
+    <h3 class="text-light">All products here </h3>
 
-<div class="row p-2">
+<div class="row p-1 d-flex justify-content-center">
     @foreach ($Products as $item)
     <div class="card text-center col-sm-3 m-1">
       <a href="detail/{{$item['id']}}">
@@ -12,10 +12,10 @@
         10% off
       </div> --}}
       {{-- image-link  --}}
-      <img class="card-img-top" src="{{$item['gallery']}}" alt="Card image cap">
+      <img class="card-img-top img-thumbnail" src="{{asset('gallery/'.$item['gallery'])}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{$item['name']}}</h5>
-        <p class="card-text">{{$item['description']}}</p>
+        <p class="card-text">Author : {{$item['description']}}</p>
         <a href="detail/{{$item['id']}}" class="btn btn-warning btn-sm">Detail</a>
       </div>
       <div class="card-footer text-danger">{{$item['price']}} BDT</div>

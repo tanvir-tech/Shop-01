@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -17,42 +18,42 @@ use Illuminate\Contracts\Session\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[ProductController::class,'showProducts']);
 
+// auth
 Route::get('/login', function () {
     return view('login');
 });
-
-// user 
 Route::post('/login',[UserController::class,'login']);
-
 Route::get('/logout',[UserController::class,'logout']);
-
 Route::get('/registration', function () {return view('registration');});
 Route::post('/registration',[UserController::class,'registration']);
-
 Route::get('/forgetPass', function () {return view('auth.forgetPass');});
-
 Route::get('/resetPass', function () {return view('auth.resetPass');});
 
 // product 
+Route::get('/insertProduct', function () {
+    return view('insertProduct');
+});
+Route::post('/insertProduct',[ProductController::class,'insertProduct']);
+
 Route::get('/home',[ProductController::class,'showProducts']);
 
 Route::get('/search',[ProductController::class,'search']);
 
 Route::get('detail/{id}',[ProductController::class,'detail']);
 
-Route::post('/cart',[ProductController::class,'addToCart']);
 
-Route::get('/cartlist',[ProductController::class,'cartlist']);
+// cart
+Route::post('/cart',[CartController::class,'addToCart']);
 
-Route::get('removeCart/{id}',[ProductController::class,'removeCart']);
+Route::get('/cartlist',[CartController::class,'cartlist']);
 
-Route::get('/orderNow',[ProductController::class,'orderNow']);
+Route::get('removeCart/{id}',[CartController::class,'removeCart']);
 
-Route::post('/placeOrder',[ProductController::class,'placeOrder']);
+Route::get('/orderNow',[CartController::class,'orderNow']);
 
-Route::get('/orderlist',[ProductController::class,'orderlist']);
+Route::post('/placeOrder',[CartController::class,'placeOrder']);
+
+Route::get('/orderlist',[CartController::class,'orderlist']);
 

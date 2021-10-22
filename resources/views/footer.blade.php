@@ -1,4 +1,4 @@
-<div class="footer text-light pl-3 pr-3 pt-0">
+<div class="footer text-light p-4 pt-0">
 
 <div class="row">
     <div class="col-lg-8 bg-secondary p-5">

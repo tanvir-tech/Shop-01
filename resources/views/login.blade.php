@@ -4,18 +4,20 @@
 <div class="container">
 
     <div class="row p-2">
-      <div class="col-lg-9 bg-secondary text-warning p-2">
-        <h1>Welcome to Our Shop</h1>
+      <div class="col-lg-9 bg-secondary text-white p-5">
+        <h1>Welcome to 
+          <br>
+          Bookhouse.com</h1>
         <br>
         <p>
-          In our shop you will get the latest collection of various kinds of products.
+          Best collection of books.
         </p>
 
 
 
       </div>
       <!-- welcome closed  -->
-      <div class="col-lg-3 bg-warning text-white">
+      <div class="col-lg-3 bg-success text-white">
         <form action="login" method="POST">
           @csrf
         <br>
@@ -25,10 +27,10 @@
         <br>
         <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password">
         <br>
-        <button class="btn btn-success" type="submit">Login</button>
+        <button class="btn btn-danger" type="submit">Login</button>
         <a class="text-success btn btn-warning btn-sm" href="registration">Create account</a>
         <br><br>
-        <a class="text-primary" href="forgetPass">Forgot password !</a>
+        <a class="text-white" href="forgetPass">Forgot password !</a>
         <br><br>
         </form>
       </div>

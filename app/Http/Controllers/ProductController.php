@@ -11,6 +11,44 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+
+    function insertProduct(Request $req){
+
+        //validate
+        $req->validate([
+            'productName'=>'required',
+            'description'=>'required',
+            'category'=>'required',
+            'price'=>'required',
+            'productImage'=>'required|file|mimes:jpg,jpeg,bmp,png',
+            'discount'=>'required',
+            'quantity'=>'required'
+        ]);
+        
+        // file
+        $productImageExt = $req->productImage->extension();
+        $new_productImageName = time().'_'.$req->productName.'_'.$req->category.'.'.$productImageExt;
+        $req->productImage->move(public_path('gallery'), $new_productImageName);
+
+        //form input
+        $product = new Product();
+        $product->name = $req->productName;
+        $product->description = $req->description;
+        $product->category = $req->category;
+        $product->price = $req->price;
+        $product->gallery = $new_productImageName;
+        $product->discount = $req->discount;
+        $product->quantity = $req->quantity;
+        $product->sold = 0;
+
+        $product->save();
+        return redirect('/insertProduct');
+        
+        // return $product;
+    }
+
+
+
     function showProducts(Request $req){
 
         $items = Product::all();
@@ -37,92 +75,14 @@ class ProductController extends Controller
     }
 
 
-    function addToCart(Request $req){
-
-        if($req->session()->has('user')){
-            $cart = new Cart;
-            $cart->user_id = session()->get('user')['id'];
-            $cart->product_id = $req->product_id;
-            $cart->save();
-            return redirect('home');
-
-        }else{
-            return view('login');
-        }
-
-    }
-
-    static function cart_Count(){
-        
-        $user_id = session()->get('user')['id'];
-        return Cart::where('user_id', $user_id)->count();
-
-    }
-
-    function cartlist(Request $request){
-
-        $userID = $request->session()->get('user')['id'];
-
-        $items = DB::table('cart')
-        ->join('products','cart.product_id','=','products.id')
-        ->where('cart.user_id',$userID)
-        ->select('products.*','cart.id as cart_id')
-        ->get();
-        return view('/cartlist',['Products'=>$items]);
-    }
-
-    function removeCart($id){
-
-        Cart::destroy($id);
-        return redirect('cartlist');
-    }
 
     
-    function orderNow(Request $request){
+// Uncomplete
+    function removeProduct($id){
 
-        $userID = $request->session()->get('user')['id'];
-
-        $total = DB::table('cart')
-        ->join('products','cart.product_id','=','products.id')
-        ->where('cart.user_id',$userID)
-        ->select('products.*','cart.id as cart_id')
-        ->sum('products.price');
-
-        return view('ordernow',['total'=>$total]);
-        //return $total;
+        Product::destroy($id);
+        return redirect('productList');
     }
 
-    function placeOrder(Request $req){
-
-        $user_id = session()->get('user')['id'];
-        $allcart = Cart::where('user_id',$user_id)->get();
-
-        foreach($allcart as $cart){
-            $order = new Order;
-            $order->product_id = $cart['product_id'];
-            $order->user_id = $cart['user_id'];
-            $order->address = $req->address;
-            $order->status = 'pending';
-            $order->payment_method = $req->payment_method;
-            $order->payment_status = 'pending';
-            $order->save();
-        }
-        Cart::where('user_id',$user_id)->delete();
-        return redirect('home');
-    }
-
-
-    function orderlist(Request $req){
-
-        $userID = $req->session()->get('user')['id'];
-
-        $orders = DB::table('orders')
-        ->join('products','orders.product_id','=','products.id')
-        ->where('orders.user_id',$userID)
-        ->get();
-
-        //return $orders;
-        return view('orderlist',['orders'=>$orders]);
-    }
 
 }

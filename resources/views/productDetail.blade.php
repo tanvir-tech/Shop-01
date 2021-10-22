@@ -5,7 +5,7 @@
     <div class="row p-5">
 
         <div class="col-lg-6">
-            <img src="{{$item['gallery']}}" alt="Product Image">
+            <img src="{{asset('gallery/'.$item['gallery'])}}" alt="Product Image">
         </div>
 
         <div class="col-lg-6">
@@ -14,8 +14,8 @@
 
             <h2 class="text-primary">{{$item['name']}}</h2>
             <h5 class="text-danger">{{$item['price']}} BDT</h5>
-            <p>{{$item['description']}}</p>
-            <a href="#" class="btn btn-success btn-sm">Buy now</a><br><br>
+            <p>Author : {{$item['description']}}</p>
+            {{-- <a href="#" class="btn btn-success btn-sm">Buy now</a><br><br> --}}
 
 <form action="/cart" method="POST">
             @csrf
