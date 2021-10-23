@@ -21,7 +21,7 @@ function addToCart(Request $req){
         return redirect('home');
 
     }else{
-        return view('login');
+        return view('auth/login');
     }
 
 }
@@ -42,14 +42,14 @@ function cartlist(Request $request){
     ->where('cart.user_id',$userID)
     ->select('products.*','cart.id as cart_id')
     ->get();
-    return view('/cartlist',['Products'=>$items]);
+    return view('cart_order/cartlist',['Products'=>$items]);
 }
 
 
 function removeCart($id){
 
     Cart::destroy($id);
-    return redirect('cartlist');
+    return redirect('cart_order/cartlist');
 }
 
 
@@ -64,7 +64,7 @@ function orderNow(Request $request){
     ->select('products.*','cart.id as cart_id')
     ->sum('products.price');
 
-    return view('ordernow',['total'=>$total]);
+    return view('cart_order/ordernow',['total'=>$total]);
     //return $total;
 }
 
@@ -100,6 +100,6 @@ function orderlist(Request $req){
     ->get();
 
     //return $orders;
-    return view('orderlist',['orders'=>$orders]);
+    return view('cart_order/orderlist',['orders'=>$orders]);
 }
 }

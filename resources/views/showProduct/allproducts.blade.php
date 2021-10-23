@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master/master')
 @section("content")
 
 <div class="allproducts bg-secondary p-2">

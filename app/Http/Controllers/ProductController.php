@@ -54,7 +54,7 @@ class ProductController extends Controller
         $items = Product::all();
 
         // return $items;
-        return view('/allproducts',['Products'=>$items]);
+        return view('showProduct/allproducts',['Products'=>$items]);
 
     }
 
@@ -62,7 +62,7 @@ class ProductController extends Controller
 
         // return $req->input();
         $items = Product::where('name','like', '%'.$req->input('query').'%')->get();
-        return view('/allproducts',['Products'=>$items]);
+        return view('showProduct/allproducts',['Products'=>$items]);
 
     }
 
@@ -70,7 +70,7 @@ class ProductController extends Controller
     function detail($id){
 
         $item = Product::find($id);
-        return view('/productDetail',['item'=>$item]);
+        return view('showProduct/productDetail',['item'=>$item]);
 
     }
 

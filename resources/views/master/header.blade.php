@@ -70,11 +70,11 @@ if(Session::has('user')){
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Profile</a>
-          <a class="dropdown-item" href="orderlist">My Orders</a>
+          <a class="dropdown-item text-warning" href="orderlist">My Orders</a>
           <a class="dropdown-item" href="#">My Wishlist</a>
           <a class="dropdown-item" href="#">Notifications</a>
           <a class="dropdown-item" href="#">Messages</a>
-          <a class="dropdown-item" href="logout">Logout</a>
+          <a class="dropdown-item text-warning" href="logout">Logout</a>
           
         </div>
       </div>

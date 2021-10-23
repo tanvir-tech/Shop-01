@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master/master')
 @section("content")
 <br><br><br>
 <h2 class="text-warning">Place Order</h2>

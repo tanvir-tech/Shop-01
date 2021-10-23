@@ -12,7 +12,7 @@
     <div class="container">
 
 
-{{View::make('header')}}
+{{View::make('master/header')}}
 
 
 
@@ -20,7 +20,7 @@
 
 
 
-{{View::make('footer')}}
+{{View::make('master/footer')}}
 
 
 

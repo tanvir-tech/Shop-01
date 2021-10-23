@@ -22,7 +22,7 @@ Route::get('/',[ProductController::class,'showProducts']);
 
 // auth
 Route::get('/login', function () {
-    return view('login');
+    return view('auth/login');
 });
 Route::post('/login',[UserController::class,'login']);
 Route::get('/logout',[UserController::class,'logout']);
@@ -33,7 +33,7 @@ Route::get('/resetPass', function () {return view('auth.resetPass');});
 
 // product 
 Route::get('/insertProduct', function () {
-    return view('insertProduct');
+    return view('admin/insertProduct');
 });
 Route::post('/insertProduct',[ProductController::class,'insertProduct']);
 

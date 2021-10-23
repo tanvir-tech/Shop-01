@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master/master')
 @section("content")
 
 <h2 class="bg-success text-white text-center">Your Orders</h2>
