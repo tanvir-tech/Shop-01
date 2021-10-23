@@ -26,16 +26,17 @@ if(Session::has('user')){
                 Category
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item text-info" href="category/Engineering" target="blank">Engineering</a>
-                <a class="dropdown-item text-warning" href="category/Fiction" target="blank">Fiction</a>
-                <a class="dropdown-item text-info" href="category/ScienceFiction" target="blank">ScienceFiction</a>
-                <a class="dropdown-item text-warning" href="category/Arts" target="blank">Arts</a>
-                <a class="dropdown-item text-info" href="category/Bengali" target="blank">Bengali</a>
-                <a class="dropdown-item text-warning" href="category/English" target="blank">English</a>
-                <a class="dropdown-item text-info" href="category/Grammer" target="blank">Grammer</a>
-                <a class="dropdown-item text-warning" href="category/Vocabulary" target="blank">Vocabulary</a>
-                <a class="dropdown-item text-info" href="category/Comics" target="blank">Comics</a>
-                <a class="dropdown-item text-warning" href="category/GeneralKnowledge" target="blank">GeneralKnowledge</a>
+              
+                <a class="dropdown-item text-info" href="{{url('/category','Engineering')}}">Engineering</a>
+                <a class="dropdown-item text-warning" href="{{url('/category','Fiction')}}">Fiction</a>
+                <a class="dropdown-item text-info" href="{{url('/category','ScienceFiction')}}">ScienceFiction</a>
+                <a class="dropdown-item text-warning" href="{{url('/category','Arts')}}">Arts</a>
+                <a class="dropdown-item text-info" href="{{url('/category','Bengali')}}">Bengali</a>
+                <a class="dropdown-item text-warning" href="{{url('/category','English')}}">English</a>
+                <a class="dropdown-item text-info" href="{{url('/category','Grammer')}}">Grammer</a>
+                <a class="dropdown-item text-warning" href="{{url('/category','Vocabulary')}}">Vocabulary</a>
+                <a class="dropdown-item text-info" href="{{url('/category','Comics')}}">Comics</a>
+                <a class="dropdown-item text-warning" href="{{url('/category','GeneralKnowledge')}}">GeneralKnowledge</a>
 
             </div>
         </div>
