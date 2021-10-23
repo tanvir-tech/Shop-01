@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -49,7 +50,7 @@ function cartlist(Request $request){
 function removeCart($id){
 
     Cart::destroy($id);
-    return redirect('cart_order/cartlist');
+    return redirect('cartlist');
 }
 
 
@@ -83,8 +84,22 @@ function placeOrder(Request $req){
         $order->payment_method = $req->payment_method;
         $order->payment_status = 'pending';
         $order->save();
+
+
+        // delete cart
+        Cart::where('user_id',$user_id)->delete();
+        // find the product
+        $updateProduct = Product::find($cart['product_id']);
+        // update product storage
+        $updateProduct->sold++;
+        $updateProduct->quantity--;
+        $updateProduct->save();
+
     }
-    Cart::where('user_id',$user_id)->delete();
+    
+
+
+    //
     return redirect('home');
 }
 

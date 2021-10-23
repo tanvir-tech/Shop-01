@@ -74,6 +74,12 @@ if(Session::has('user')){
           <a class="dropdown-item" href="#">My Wishlist</a>
           <a class="dropdown-item" href="#">Notifications</a>
           <a class="dropdown-item" href="#">Messages</a>
+          
+          {{-- @if(Str::contains(Session::get('user')['type'] , "admin"))
+          <a class="dropdown-item" href="insertProduct">Insert Product</a>
+          <a class="dropdown-item" href="insertProduct">Edit Product</a>
+          @endif --}}
+
           <a class="dropdown-item text-warning" href="logout">Logout</a>
           
         </div>
