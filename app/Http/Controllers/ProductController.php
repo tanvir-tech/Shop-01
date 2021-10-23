@@ -48,7 +48,6 @@ class ProductController extends Controller
     }
 
 
-
     function showProducts(Request $req){
         $items = Product::all();
         // return $items;
@@ -57,7 +56,10 @@ class ProductController extends Controller
 
     function search(Request $req){
         // return $req->input();
-        $items = Product::where('name','like', '%'.$req->input('query').'%')->get();
+        $items = Product::where('name','like', '%'.$req->input('query').'%')
+                        ->orWhere('description','like', '%'.$req->input('query').'%')           
+                        ->orWhere('category','like', '%'.$req->input('query').'%')      
+                        ->get();
         return view('showProduct/allproducts',['Products'=>$items]);
     }
 
