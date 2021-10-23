@@ -50,28 +50,28 @@ class ProductController extends Controller
 
 
     function showProducts(Request $req){
-
         $items = Product::all();
-
         // return $items;
         return view('showProduct/allproducts',['Products'=>$items]);
-
     }
 
     function search(Request $req){
-
         // return $req->input();
         $items = Product::where('name','like', '%'.$req->input('query').'%')->get();
         return view('showProduct/allproducts',['Products'=>$items]);
+    }
+
+    function categoryProduct($category){
+        // return $category;
+        $items = Product::where('category','like', '%'.$category.'%')->get();
+        return view('showProduct/categoryProduct',['Products'=>$items]);
 
     }
 
 
     function detail($id){
-
         $item = Product::find($id);
         return view('showProduct/productDetail',['item'=>$item]);
-
     }
 
 

@@ -40,6 +40,7 @@ Route::post('/insertProduct',[ProductController::class,'insertProduct']);
 Route::get('/home',[ProductController::class,'showProducts']);
 
 Route::get('/search',[ProductController::class,'search']);
+Route::get('category/{category}',[ProductController::class,'categoryProduct']);
 
 Route::get('detail/{id}',[ProductController::class,'detail']);
 
