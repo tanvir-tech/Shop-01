@@ -42,7 +42,7 @@ if(Session::has('user')){
         </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Trending</a>
+            <a class="nav-link" href="/latest">Latest</a>
           </li>
     
       </ul>
@@ -76,10 +76,10 @@ if(Session::has('user')){
           <a class="dropdown-item" href="#">Notifications</a>
           <a class="dropdown-item" href="#">Messages</a>
           
-          {{-- @if(Str::contains(Session::get('user')['type'] , "admin"))
+          @if(Str::contains(Session::get('user')['type'] , "admin"))
           <a class="dropdown-item" href="insertProduct">Insert Product</a>
           <a class="dropdown-item" href="insertProduct">Edit Product</a>
-          @endif --}}
+          @endif
 
           <a class="dropdown-item text-warning" href="logout">Logout</a>
           

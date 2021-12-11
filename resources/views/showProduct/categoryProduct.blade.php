@@ -4,6 +4,7 @@
 <div class="allproducts bg-secondary p-2">
     <h3 class="text-light">All products here </h3>
 
+   
 <div class="row p-1 d-flex justify-content-center">
     @foreach ($Products as $item)
     <div class="card text-center col-sm-3 m-1">
@@ -25,9 +26,8 @@
 
     @endforeach
     
-
+    
 </div>
-
 
 
       

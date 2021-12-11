@@ -38,12 +38,13 @@ Route::get('/insertProduct', function () {
 Route::post('/insertProduct',[ProductController::class,'insertProduct']);
 
 Route::get('/home',[ProductController::class,'showProducts']);
+Route::get('/latest',[ProductController::class,'latestProducts']);
 
 Route::get('/search',[ProductController::class,'search']);
 Route::get('category/{category}',[ProductController::class,'categoryProduct']);
 
 Route::get('detail/{id}',[ProductController::class,'detail']);
-
+Route::get('category/detail/{id}',[ProductController::class,'detail']);
 
 // cart
 Route::post('/cart',[CartController::class,'addToCart']);

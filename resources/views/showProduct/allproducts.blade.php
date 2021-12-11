@@ -16,12 +16,13 @@
       <div class="card-body">
         <h5 class="card-title">{{$item['name']}}</h5>
         <p class="card-text">Author : {{$item['description']}}</p>
-        <a href="detail/{{$item['id']}}" class="btn btn-warning btn-sm">Detail</a>
+        {{-- <a href="detail/{{$item['id']}}" class="btn btn-warning btn-sm">Detail</a> --}}
+        <a href="{{url('/detail', $item['id'])}}" class="btn btn-warning btn-sm">Detail</a>
       </div>
       <div class="card-footer text-danger">{{$item['price']}} BDT</div>
     </div>
   </a>
-
+  
 
     @endforeach
     
@@ -40,5 +41,7 @@
 
 
 </div>
-
+{{-- $posts->links('pagination::bootstrap-4') --}}
+<p>{{ $Products->links('pagination::bootstrap-4') }}</p>
+{{-- <div class="container">{{ $Products->links() }}</div> --}}
 @endsection
