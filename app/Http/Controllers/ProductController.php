@@ -49,7 +49,7 @@ class ProductController extends Controller
 
 
     function showProducts(Request $req){
-        $items = Product::all()->last()->paginate(6);
+        $items = Product::all()->last()->paginate(10);
         // return $items;
         return view('showProduct/allproducts',['Products'=>$items]);
     }
@@ -59,19 +59,19 @@ class ProductController extends Controller
         $items = Product::where('name','like', '%'.$req->input('query').'%')
                         ->orWhere('description','like', '%'.$req->input('query').'%')           
                         ->orWhere('category','like', '%'.$req->input('query').'%')      
-                        ->paginate(6);
+                        ->paginate(10);
         return view('showProduct/allproducts',['Products'=>$items]);
     }
 
     function categoryProduct($category){
         // return $category;
-        $items = Product::where('category','like', '%'.$category.'%')->paginate(6);
+        $items = Product::where('category','like', '%'.$category.'%')->paginate(10);
         return view('showProduct/categoryProduct',['Products'=>$items]);
 
     }
 
     function latestProducts(){
-        $items = Product::all()->last()->paginate(6);
+        $items = Product::all()->last()->paginate(10);
         //return $items;
         return view('showProduct/allproducts',['Products'=>$items]);
     }

@@ -58,6 +58,8 @@
               <input type="submit" value="Log In" class="btn btn-block btn-primary">
 
             </form>
+<br>
+            <span class="ml-auto"><a href="registration" class="forgot-pass">Sign up</a></span> 
           </div>
         </div>
       </div>

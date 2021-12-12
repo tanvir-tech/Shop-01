@@ -1,7 +1,8 @@
 @extends('master/master')
 @section("content")
 
-
+<div class="container">
+    
     <div class="row p-5">
 
         <div class="col-lg-6">
@@ -31,6 +32,7 @@
         </div>
     </div>
 
+</div>
 
 
 
