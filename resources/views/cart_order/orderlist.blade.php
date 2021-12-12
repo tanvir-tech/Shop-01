@@ -26,6 +26,11 @@
                     
                 </div>
 
+                <div class="col-lg-3 p-3">
+                    <a href="payOrder/{{$item->id}}" class="text-white btn btn-warning">Pay</a>
+                    <a href="cancelOrder/{{$item->id}}" class="text-white btn btn-danger">Cancel</a>
+                </div>
+
 
 
 
